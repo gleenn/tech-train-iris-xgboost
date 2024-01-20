@@ -2,10 +2,14 @@
   (:require [clojure.test :refer :all]
             [tech-train-iris-xgboost.core :refer :all]
             [tech.v3.dataset :as ds]
+            [tech.v3.dataset.categorical :as ds-cat]
             [tech.v3.dataset.column-filters :as cf]
             [tech.v3.dataset.modelling :as ds-mod]))
 
+;; blatantly stolen from https://github.com/techascent/tech.ml
 
+
+;; note that I also copied this file into the resources directory ;)
 (def ds (ds/->dataset "https://raw.githubusercontent.com/techascent/tech.ml/master/test/data/iris.csv"))
 
 (deftest a-test
