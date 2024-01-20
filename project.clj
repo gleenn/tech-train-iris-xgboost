@@ -8,4 +8,5 @@
   :dependencies [[org.clojure/clojure "1.11.1"]
                  [techascent/tech.ml.dataset "7.022"]
 		 [techascent/tech.ml "6.019"]]
+  :aliases {"co" ["test-refresh" ":changes-only"]}
   :repl-options {:init-ns tech-train-iris-xgboost.core})
