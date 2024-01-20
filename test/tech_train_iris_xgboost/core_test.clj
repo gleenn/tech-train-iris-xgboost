@@ -20,3 +20,15 @@
 ;;; convert the categorical fields to numeric for regression
 (def numeric-ds (ds/categorical->number ds cf/categorical))
 
+(deftest meta-test
+  (is (= {:categorical? true
+          :name "species"
+          :datatype :float64
+          :n-elems 150
+          :categorical-map
+          {:lookup-table {"versicolor" 2 "setosa" 0 "virginica" 1}
+           :src-column "species"
+           :result-datatype :float64}}
+         (-> (meta (numeric-ds "species"))
+             (update :categorical-map #(into {} %))))))
+
